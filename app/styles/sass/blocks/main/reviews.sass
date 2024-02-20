@@ -1,0 +1,67 @@
+.reviews
+  padding-bottom: 140px
+  overflow: hidden
+  .hr
+    margin-bottom: 24px
+  .title
+    margin-bottom: 60px
+    color: rgb(16, 16, 16)
+    font-size: 40px
+    font-weight: 700
+    line-height: 100%
+    text-transform: uppercase
+  .social
+    display: flex
+    gap: 10px
+    a
+      display: flex
+      width: 170px
+      justify-content: space-between
+      align-items: flex-start
+      height: fit-content
+      background: white
+      padding: 10px
+      text-decoration: none
+  .reviews_slider
+    .swiper-wrapper
+      display: flex
+      flex-wrap: wrap
+      gap: 64px 12.5%
+  .item
+    text-decoration: none
+    width: 25%
+    &:hover
+      .icon
+        svg
+          .pth1
+            stroke: white
+          .pth
+            fill: white
+          circle, rect
+            fill: #101010
+    .icon
+      margin-bottom: 35px
+      svg
+        transition: all 0.3s ease
+        circle, .pth, .pth1, rect
+          transition: all 0.3s ease
+    .date
+      margin-bottom: 15px
+      color: rgb(160, 160, 160)
+      font-size: 16px
+      font-weight: 500
+      line-height: 110%
+    p
+      // max-width: 70%
+      margin: 0
+      font-size: 20px
+      font-weight: 500
+      line-height: 110%
+      color: #101010
+      .link
+        font-size: 20px
+        font-weight: 500
+        line-height: 110%
+        color: #777777
+        display: inline-block
+        text-decoration: underline

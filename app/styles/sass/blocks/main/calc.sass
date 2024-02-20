@@ -1,0 +1,66 @@
+.calc
+  padding-bottom: 112px
+  .section_title
+    margin-bottom: 57px
+    p
+      color: rgb(119, 119, 119)
+  .title
+    color: rgb(16, 16, 16)
+    font-size: 40px
+    font-weight: 700
+    line-height: 100%
+    text-transform: uppercase
+    margin-bottom: 15px
+  p
+    margin-bottom: 0
+    color: rgb(16, 16, 16)
+    font-size: 16px
+    font-weight: 500
+    line-height: 110%
+  .calc_wrapper
+    .button_wrapper
+      display: flex
+      justify-content: center
+      .button.next
+        min-width: 440px
+      .button.prev
+        margin-right: 20px
+        min-width: 116px
+    .step.active
+      display: flex
+    .step
+      margin-bottom: 40px
+      display: none
+      flex-direction: column
+      gap: 30px
+      min-height: 400px
+      .send_form
+        max-width: 70%
+      .item
+        label
+          width: 100%
+          gap: 30px
+          display: flex
+          &:hover
+            cursor: pointer
+          .wrapper
+            border-bottom: 1px solid rgb(16, 16, 16)
+            padding-bottom: 20px
+            width: 100%
+            display: flex
+            justify-content: space-between
+            input
+              display: none
+            svg.active
+              rect
+                fill: #111111
+            svg
+              rect
+                fill: none
+                stroke: #111111
+            span
+              color: rgb(65, 65, 65)
+              font-size: 18px
+              font-weight: 700
+              line-height: 110%
+              text-transform: uppercase

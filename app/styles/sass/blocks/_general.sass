@@ -1,0 +1,199 @@
+main
+  section, header, footer
+    .container-fluid
+      padding-left: 20px
+      padding-right: 20px
+
+.button 
+  font-size: 16px
+  font-weight: 500
+  line-height: 110%
+  text-decoration: none
+  padding: 21px 19px
+  transition: all 0.3s ease
+  display: inline-block
+  text-align: center
+
+.button.icon 
+  display: inline-flex
+  justify-content: space-between
+  align-items: center
+  gap: 90px
+  
+.button.main
+  color: rgb(255, 255, 255)
+  background: rgb(16, 16, 16)
+  border: 1px solid rgb(16, 16, 16)
+  &:hover
+    background: #414141
+    border-color: #414141
+
+.button.main-r
+  color: rgb(16, 16, 16)
+  background: rgb(255, 255, 255)
+  border: 1px solid rgb(255, 255, 255)
+  &:hover
+    color: rgb(256, 256, 256)
+    background: #414141
+    border-color: #414141
+
+.button.outline
+  color: rgb(16, 16, 16)
+  background: none
+  border: 1px solid rgb(16, 16, 16)
+  &:hover
+    background: rgb(16, 16, 16)
+    color: rgb(255, 255, 255)
+
+.button.outline-r
+  color: rgb(255, 255, 255)
+  background: none
+  border: 1px solid rgb(255, 255, 255)
+  &:hover
+    background: rgb(255, 255, 255)
+    color: rgb(16, 16, 16)
+
+.button.main.disabled
+  pointer-events: none
+  color: rgb(255, 255, 255)
+  background: rgb(160, 160, 160)
+  border: 1px solid rgb(160, 160, 160)
+
+.button.outline.disabled
+  pointer-events: none
+  border-color: rgb(160, 160, 160)
+  color: rgb(160, 160, 160)
+
+.section_title
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 17px
+  p
+    margin: 0
+    color: rgb(119, 119, 119)
+    font-size: 16px
+    font-weight: 700
+    line-height: 110%
+    text-transform: uppercase
+  a
+    text-decoration: none
+    color: rgb(16, 16, 16)
+    font-size: 16px
+    font-weight: 700
+    line-height: 110%
+    text-transform: uppercase
+
+svg + .section_title
+  margin-top: 20px
+
+.send_form
+  display: flex
+  flex-wrap: wrap
+  align-content: flex-start
+  gap: 20px 10px
+  input
+    background: none
+    width: calc(50% - 5px)
+    border: none
+    border-bottom: 1.5px solid rgb(160, 160, 160)
+    padding-bottom: 9px
+    color: rgb(16, 16, 16)
+    font-size: 14px
+    font-weight: 400
+    line-height: 90%
+    &:placeholder
+      color: rgb(16, 16, 16)
+      font-size: 14px
+      font-weight: 400
+      line-height: 90%  
+  button
+    width: 100%
+
+
+.archive-page
+  padding-top: 26px
+  padding-bottom: 200px
+  h2.title
+    color: rgb(16, 16, 16)
+    font-size: 30px
+    font-weight: 700
+    line-height: 100%
+    text-transform: uppercase
+    margin: 0
+
+.archive-page.news, .single-news-relative
+  .news_card
+    display: block
+    width: 100% !important
+    margin-bottom: 40px
+
+
+.archive-page.reviews
+  .item
+    width: 80% !important
+    margin-bottom: 64px
+
+
+.breadcrumbs
+  margin: 18px 0 58px 0
+  a, span
+    font-size: 14px
+    font-weight: 400
+    line-height: 110%
+  a
+    text-decoration: none
+    color: #393939
+    transition: all 0.3s ease
+    &::after
+      content: ' – '
+      padding: 0 5px
+      color: #393939
+    &:hover
+      color: #CFCFCF
+  span
+    color: #CFCFCF
+
+
+.pagination
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    gap: 10px
+    li.disabled
+      a
+        pointer-events: none
+        svg
+          path
+            stroke: #CFCFCF
+    li.active
+      border: 1px solid rgb(16, 16, 16)
+      a
+        &:hover
+          color: rgb(16, 16, 16)
+    li
+      a
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 17px 21px
+        text-decoration: none
+        color: rgb(16, 16, 16)
+        font-size: 16px
+        font-weight: 500
+        line-height: 110%
+        transition: all 0.3s ease
+        &:hover
+          color: #777777
+
+
+.sticky
+  position: fixed
+  z-index: 101
+  padding: 10px 0
+
+.stop
+  position: relative
+  z-index: 101

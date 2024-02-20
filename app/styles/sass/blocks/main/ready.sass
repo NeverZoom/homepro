@@ -1,0 +1,108 @@
+.ready
+  padding-bottom: 77px
+  .hr
+    margin-bottom: 24px
+  .title
+    color: rgb(16, 16, 16)
+    font-size: 40px
+    font-weight: 700
+    line-height: 100%
+    letter-spacing: 0%
+    text-transform: uppercase
+    max-width: 50%
+    margin-bottom: 34px
+  .subtitle
+    margin-bottom: 20px
+    color: rgb(16, 16, 16)
+    font-size: 16px
+    font-weight: 500
+    line-height: 110%
+  span.info
+    margin-top: 20px
+    display: flex
+    gap: 3px
+    color: rgb(119, 119, 119)
+    font-size: 12px
+    font-weight: 400
+    line-height: 120%
+  .tabs
+    max-width: 50%
+    .tab.dis
+      svg
+        .fill
+          fill: white
+    .tab.active
+      >span
+        color: rgb(16, 16, 16)
+    .tab
+      border: 1px solid rgb(231, 231, 231)
+      background: rgb(255, 255, 255)
+      padding: 18px 18px 10px 18px
+      &:hover
+        cursor: pointer
+      svg
+        width: 75px
+        display: block
+        height: auto
+        margin-bottom: 15px
+        path
+          transition: all 0.3s ease
+      >span
+        color: rgb(119, 119, 119)
+        font-size: 14px
+        transition: all 0.3s ease
+        font-weight: 500
+        line-height: 110%
+  .tab_nav.active
+    display: block
+  .tab_nav
+    display: none
+  .button.main
+    min-width: 420px
+    margin-top: 20px
+  .ready_card
+    margin-bottom: 40px
+    .info_wrapper
+      margin-top: 24px
+      display: flex
+      span
+        &:first-child
+          width: 50%
+        &:nth-child(2), &:nth-child(3)
+          width: 25%
+    .type
+      margin-bottom: 10px
+      color: rgb(119, 119, 119)
+      font-size: 16px
+      font-weight: 500
+      line-height: 110%
+    .name
+      color: rgb(16, 16, 16)
+      font-size: 26px
+      font-weight: 500
+      line-height: 100%
+      text-transform: uppercase
+    .image_wrapper
+      position: relative
+      img
+        width: 100%
+        object-fit: cover
+        height: 550px
+      .tag_wrapper
+        position: absolute
+        top: 26px
+        left: 26px
+        display: flex
+        gap: 15px
+        .tag
+          padding: 12px 17px
+          font-size: 12px
+          font-weight: 500
+          line-height: 120%
+          text-align: center
+          &:first-child
+            background: rgb(242, 201, 76)
+            color: rgb(255, 255, 255)
+          &:last-child
+            background: rgb(255, 255, 255)
+            color: rgb(16, 16, 16)

@@ -1,0 +1,334 @@
+.single_ready_hero
+  padding: 25px 0 50px 0
+  h2.title
+    color: rgb(16, 16, 16)
+    font-size: 30px
+    font-weight: 700
+    line-height: 100%
+    text-transform: uppercase
+  .ready_hero_slider
+    overflow: hidden
+    position: relative
+    .swiper-slide
+      img
+        height: 650px
+        width: 100%
+        object-fit: cover
+    .swiper-button-prev, .swiper-button-next
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      z-index: 2
+      svg
+        circle
+          transition: all 0.3s ease
+      &:hover
+        svg
+          circle
+            fill-opacity: 0.6
+    .swiper-button-disabled
+      &:hover
+        pointer-events: none
+        cursor: default
+        svg
+          circle
+            fill-opacity: 0.41
+    .swiper-button-prev
+      left: 20px
+    .swiper-button-next
+      right: 20px
+    .swiper-pagination
+      position: absolute
+      bottom: 30px
+      left: 50%
+      transform: translateX(-50%)
+      z-index: 2
+      display: flex
+      gap: 12px
+      .swiper-pagination-bullet
+        transition: all 0.3s ease
+        display: block
+        background: rgba(0, 0, 0, 0.52)
+        width: 10px
+        height: 10px
+        border-radius: 100%
+      .swiper-pagination-bullet-active
+        background: rgb(255, 255, 255)
+
+.single_ready_content
+  padding-bottom: 190px
+  nav
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-direction: column
+      gap: 20px
+      li
+        width: 100%
+        border-bottom: 1px solid rgb(231, 231, 231)
+        padding-bottom: 20px
+        a
+          text-decoration: none
+          color: rgb(16, 16, 16)
+          font-size: 14px
+          font-weight: 400
+          line-height: 110%
+  .sidebar
+    padding: 28px 22px
+    background: rgb(17, 17, 17)
+    width: 100%
+    >span
+      margin-bottom: 60px
+      display: block
+    .subtitle
+      margin-bottom: 40px
+      color: rgb(255, 255, 255)
+      font-size: 20px
+      font-weight: 700
+      line-height: 110%
+    .line
+      color: rgb(160, 160, 160)
+      font-size: 16px
+      font-weight: 400
+      line-height: 110%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 20px
+      p
+        margin: 0
+        display: inline-block
+        color: rgb(255, 255, 255)
+        font-size: 16px
+        font-weight: 500
+        line-height: 110%
+    .button_wrapper
+      margin-top: 40px
+      display: flex
+      flex-direction: column
+      gap: 11px
+      .button
+        width: 100%
+  .main_content
+    padding: 0 40px
+    .info_content
+      margin-bottom: 37px
+      color: rgb(16, 16, 16)
+      font-size: 16px
+      font-weight: 400
+      line-height: 110%
+    .info_lines_wrapper
+      display: flex
+      flex-direction: column
+      gap: 30px
+      margin-bottom: 50px
+      .line
+        color: rgb(16, 16, 16)
+        font-size: 18px
+        font-weight: 500
+        line-height: 110%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-bottom: 8px
+        border-bottom: 1px solid rgb(231, 231, 231)
+        span
+          color: rgb(16, 16, 16)
+          font-size: 18px
+          font-weight: 500
+          line-height: 110%
+    .content_title
+      margin-bottom: 20px
+      color: rgb(16, 16, 16)
+      font-size: 26px
+      font-weight: 700
+      line-height: 100%
+      text-transform: uppercase
+    .tabs
+      display: flex
+      gap: 60px
+      margin-bottom: 40px
+      .tab.active
+        color: rgb(57, 57, 57)
+      .tab
+        transition: all 0.3s ease
+        color: rgb(207, 207, 207)
+        font-size: 18px
+        font-weight: 500
+        line-height: 110%
+        &:hover
+          cursor: pointer
+    .tabs_content.active
+      display: block
+    .tabs_content
+      display: none
+      margin-bottom: 100px
+      .facade_slider, .plan_slider
+        overflow: hidden
+        position: relative
+        img
+          width: 100%
+          object-fit: cover
+        .swiper-button-prev, .swiper-button-next
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          z-index: 2
+        .swiper-button-prev
+          left: 30px
+        .swiper-button-next
+          right: 30px
+    .select_tabs.active
+      .name
+        svg
+          transform: rotate(180deg)
+    .select_tabs
+      position: relative
+      margin-bottom: 80px
+      &:hover
+        cursor: pointer
+      .name
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 18px 0 12px 0
+        border-bottom: 1px solid rgb(17, 17, 17)
+        svg
+          transition: all 0.3s ease
+        span
+          color: rgb(16, 16, 16)
+          font-size: 20px
+          font-weight: 500
+          line-height: 110%
+      .options
+        position: absolute
+        width: 100%
+        left: 0
+        top: calc(100% + 20px)
+        display: none
+        border: 1px solid rgb(231, 231, 231)
+        background: rgb(255, 255, 255)
+        padding: 20px
+        font-size: 20px
+        font-weight: 500
+        z-index: 2
+        line-height: 110%
+        color: #101010
+        .active
+          color: #777777
+        >div
+          margin-bottom: 10px
+          &:hover
+            cursor: pointer
+    .select_tab_content.active
+      display: block
+    .select_tab_content
+      display: none
+    .accordeon
+      margin-bottom: 60px
+      .item
+        &:hover
+          cursor: pointer
+        .name
+          color: rgb(16, 16, 16)
+          font-size: 20px
+          font-weight: 500
+          line-height: 110%
+          border-bottom: 1px solid rgb(16, 16, 16)
+          padding-bottom: 20px
+          margin-bottom: 30px
+        .content.active
+          display: block
+        .content
+          margin-bottom: 30px
+          display: none
+          p
+            color: rgb(119, 119, 119)
+            font-size: 18px
+            font-weight: 400
+            line-height: 110%
+            margin-bottom: 20px
+          img
+            width: 100%
+            object-fit: cover
+    .ipo_calc
+      margin-top: 60px
+
+
+.ipo_calc
+  form
+    display: flex
+    flex-direction: column
+    gap: 60px
+    .btn_wrapper
+      .button
+        margin-bottom: 20px
+        min-width: 360px
+      span
+        display: block
+        color: rgb(119, 119, 119)
+        font-size: 12px
+        font-weight: 400
+        line-height: 120%
+  .line
+    .about_title
+      margin-bottom: 10px
+      color: rgb(119, 119, 119)
+      font-size: 14px
+      font-weight: 500
+      line-height: 100%
+    .current
+      color: rgb(57, 57, 57)
+      font-size: 40px
+      font-weight: 500
+      line-height: 100%
+      text-transform: uppercase
+      input
+        color: rgb(57, 57, 57)
+        font-size: 40px
+        width: 100%
+        font-weight: 500
+        line-height: 100%
+        text-transform: uppercase
+        display: inline-block
+        background: none
+        border: none
+    .p_wrapper
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-top: 30px
+    .p1, .p2
+      color: rgb(57, 57, 57)
+      font-size: 12px
+      font-weight: 500
+      line-height: 120%
+    .slider_wrapper
+      position: relative
+      width: 100%
+      height: 2px
+      margin-top: 16px
+      input[type='range']
+        appearance: none
+        width: 100%
+        outline: none
+        position: absolute
+        margin: auto
+        top: 0
+        bottom: 0
+        left: 0
+        background-color: #393939
+        pointer-events: none
+      input[type="range"]::-ms-track
+        appearance: none
+        height: 2px
+      input[type="range"]::-webkit-slider-thumb
+        appearance: none
+        height: 10px
+        width: 10px
+        background-color: #393939
+        cursor: pointer
+        border-radius: 100%
+        pointer-events: auto
