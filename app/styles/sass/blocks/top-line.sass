@@ -20,8 +20,8 @@
         font-size: 14px
         font-weight: 500
         line-height: 110%
-        &:first-child
-          margin-right: 78px
+        &:last-child
+          margin-left: 78px
   .main_line
     padding: 13px 0 30px 0
     margin: 0 20px
@@ -40,6 +40,45 @@
         list-style: none
         margin: 0
         padding: 0
+        li.sub.active
+          a
+            color: #777777
+          .sub-menu
+            opacity: 1
+            z-index: 10
+            pointer-events: all
+            transform: translateY(0px)
+        li.sub
+          position: relative
+          .sub-menu
+            transition: all 0.3s ease
+            transform: translateY(-20px)
+            opacity: 0
+            z-index: -1
+            pointer-events: none
+            position: absolute
+            border: 1px solid rgb(231, 231, 231)
+            background: rgb(255, 255, 255)
+            width: max-content
+            padding: 20px
+            left: 0
+            top: calc(100% + 22px)
+            ul
+              list-style: none
+              padding: 0
+              margin: 0
+              display: flex
+              flex-direction: column
+              align-items: flex-start
+              gap: 10px
+              li
+                a
+                  color: rgb(16, 16, 16)
+                  font-size: 16px
+                  font-weight: 500
+                  line-height: 110%
+                  &:hover
+                    color: #777777
         li
           a
             text-decoration: none
@@ -50,3 +89,59 @@
             transition: all 0.3s ease
             &:hover
               color: #777777
+
+
+.mobile-menu.active
+  transform: translateX(0)
+  z-index: 999
+  opacity: 1
+  pointer-events: all
+.mobile-menu
+  position: absolute
+  height: 100%
+  width: 100%
+  z-index: -1
+  left: 0
+  top: 0
+  opacity: 0
+  pointer-events: none
+  transform: translateX(0px)
+  background: #FBFBFB
+  padding: 60px 15px
+  transition: all 0.3s ease
+  .close
+    position: absolute
+    right: 15px
+    top: 60px
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    flex-direction: column
+    gap: 30px
+    li.sub.active
+      >a
+        color: #777777
+    li.sub
+      .sub-menu
+        display: none
+        margin-bottom: 10px
+        margin-top: 20px
+        ul
+          gap: 10px
+          li
+            a
+              color: #101010
+              text-decoration: none
+              font-size: 16px
+              font-weight: 500
+              line-height: 18px
+    li
+      a
+        transition: all 0.3s ease
+        text-decoration: none
+        font-size: 24px
+        font-weight: 500
+        line-height: 26px
+        color: #101010

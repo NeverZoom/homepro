@@ -102,7 +102,8 @@
         display: inline-block
         color: rgb(255, 255, 255)
         font-size: 16px
-        font-weight: 500
+        font-weight: 400
+        font-family: Montserrat, sans-serif !important
         line-height: 110%
     .button_wrapper
       margin-top: 40px
@@ -228,6 +229,11 @@
       display: none
     .accordeon
       margin-bottom: 60px
+      .item.active
+        .name
+          border-bottom: 0px
+          color: #777777
+          margin-bottom: 0px
       .item
         &:hover
           cursor: pointer
@@ -245,7 +251,7 @@
           margin-bottom: 30px
           display: none
           p
-            color: rgb(119, 119, 119)
+            color: #101010
             font-size: 18px
             font-weight: 400
             line-height: 110%
@@ -285,6 +291,7 @@
       font-weight: 500
       line-height: 100%
       text-transform: uppercase
+      font-family: Montserrat, sans-serif !important
       input
         color: rgb(57, 57, 57)
         font-size: 40px

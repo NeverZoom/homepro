@@ -49,7 +49,7 @@
     font-size: 14px
     padding: 19px 22px
   .button.icon 
-    gap: 90px
+    gap: 10px
   .news
     padding-bottom: 40px
     .more_link
@@ -113,7 +113,7 @@
             gap: 30px
             .wrapper
               border-bottom: 0px solid rgb(16, 16, 16)
-              padding-bottom: 20px
+              // padding-bottom: 20px
               span
                 font-size: 18px
   svg + .section_title
@@ -139,6 +139,8 @@
         flex-direction: column
         justify-content: center
         padding: 16px 18px 10px 18px
+        &:last-child
+          border-left: none
         svg
           width: 75px
           margin-bottom: 15px
@@ -184,6 +186,8 @@
         min-height: 450px
       .bank_wrapper
         padding: 33px 22px 22px 22px
+        .item
+          width: calc(100% / 3 - 10px)
       .form_wrapper
         padding: 22px 22px 0 22px
         flex-wrap: wrap
@@ -491,8 +495,8 @@
         height: 2px
         margin-top: 40px
         input[type="range"]::-webkit-slider-thumb
-          height: 15px
-          width: 15px
+          height: 20px
+          width: 20px
   .single_project_content
     padding-bottom: 100px
     .button
@@ -614,7 +618,7 @@
           padding-bottom: 40px
           margin-top: 20px
           p, ul li
-            font-size: 20px
+            font-size: 16px
             max-width: 100%
           img
             max-width: 100%
@@ -705,6 +709,76 @@
         font-size: 20px
       .sidebar_subtitle
         font-size: 16px
+  .guarantee-page
+    padding-top: 10px
+    padding-bottom: 100px
+    h1.title
+      font-size: 26px
+    .content
+      margin-top: 0px
+      h3
+        font-size: 20px
+        margin-bottom: 20px
+      ul
+        margin-bottom: 40px
+        li
+          margin-bottom: 10px
+      p
+        margin-bottom: 10px
+      p, ul li
+        font-size: 18px
+  .useful
+    padding-top: 10px
+    padding-bottom: 60px
+    h1.title
+      font-size: 26px
+  .contact-page
+    padding-top: 10px
+    padding-bottom: 40px
+    h1.title
+      font-size: 26px
+    .section_title
+      margin-bottom: 20px
+    .contacts_list
+      flex-wrap: wrap
+      gap: 40px
+      margin-bottom: 60px
+      .contact_item
+        width: 350px
+        .tag
+          margin-bottom: 13px
+          font-size: 16px
+        span
+          gap: 10px
+          a, p
+            font-size: 20px
+    .social
+      flex-wrap: wrap
+      gap: 18px 30px
+      margin-bottom: 60px
+      .link
+        gap: 20px
+        font-size: 14.88px
+    .map
+      margin-top: 70px
+      height: 340px
+    .docs_wrapper
+      gap: 40px
+      .item
+        .name
+          font-size: 16px
+          margin-bottom: 10px
+        .content
+          font-size: 18px
+        .link
+          font-size: 16px
+  .class_popup
+    width: 95%
+    max-width: 600px
+    padding: 30px
+    .title
+      font-size: 26px
+
 
 
 
@@ -718,8 +792,8 @@
         gap: 20px
         .link
           font-size: 12px
-          &:first-child
-            margin-right: 0px
+          &:last-child
+            margin-left: 0px
     .main_line
       nav
         ul
@@ -792,6 +866,8 @@
     .container-fluid
       .bank_wrapper
         padding: 40px 22px 40px 22px
+        .item
+          width: 107.65px
       .form_wrapper
         padding: 40px 22px 0 22px
         flex-wrap: nowrap
@@ -1051,6 +1127,54 @@
         flex-direction: row
         .button
           min-width: 300px
+  .guarantee-page
+    h1.title
+      font-size: 30px
+  .useful
+    h1.title
+      font-size: 30px
+  .contact-page
+    h1.title
+      font-size: 30px
+    .section_title
+      margin-bottom: 45px
+    .contacts_list
+      gap: 40px 70px
+      margin-bottom: 80px
+      .contact_item
+        width: 280px
+        .tag
+          margin-bottom: 13px
+          font-size: 16px
+        span
+          gap: 10px
+          a, p
+            font-size: 20px
+    .social
+      flex-wrap: nowrap
+      margin-bottom: 70px
+      gap: 30px
+      .link
+        gap: 20px
+        font-size: 14.88px
+    .map
+      margin-top: 100px
+      height: 340px
+    .docs_wrapper
+      gap: 40px
+      .item
+        .name
+          font-size: 16px
+          margin-bottom: 10px
+        .content
+          font-size: 18px
+        .link
+          font-size: 16px
+  .class_popup
+    width: 580px
+    padding: 30px 100px 30px 30px
+    .title
+      font-size: 30px
 
 
 +media-breakpoint-up(lg)
@@ -1064,15 +1188,15 @@
         gap: 53px
         .link
           font-size: 14px
-          &:first-child
-            margin-right: 78px
+          &:last-child
+            margin-left: 78px
     .main_line
       padding: 13px 0 30px 0
       margin: 0 20px
       border-bottom: 1px solid rgb(231, 231, 231)
       nav
         ul
-          gap: 30px
+          gap: 32px
           li
             a
               font-size: 16px
@@ -1090,6 +1214,7 @@
       width: 100%
     .button
       width: 90%
+      gap: 20px !important
       margin-bottom: 0px
     .wrapper
       width: 90%
@@ -1146,6 +1271,8 @@
           max-width: 70%
         .item
           label
+            padding-bottom: 0
+            align-items: flex-start
             gap: 30px
             .wrapper
               padding-bottom: 20px
@@ -1169,6 +1296,8 @@
       display: block
       .tab
         padding: 18px 18px 10px 18px
+        &:last-child
+          border-left: 1px solid rgb(231, 231, 231)
         svg
           width: 75px
           margin-bottom: 15px
@@ -1299,6 +1428,7 @@
             font-size: 30px
         p
           width: 40%
+          margin-bottom: 20px
           font-size: 20px
     a.button.main
       min-width: 440px
@@ -1726,7 +1856,68 @@
         font-size: 20px
       .sidebar_subtitle
         font-size: 16px
-
+  .guarantee-page
+    padding-top: 26px
+    padding-bottom: 100px
+    h1.title
+      font-size: 30px
+    .content
+      margin-top: 20px
+      h3
+        font-size: 20px
+        margin-bottom: 20px
+      ul
+        margin-bottom: 40px
+        li
+          margin-bottom: 10px
+      p
+        margin-bottom: 10px
+      p, ul li
+        font-size: 18px
+  .useful
+    padding-top: 26px
+    padding-bottom: 160px
+    h1.title
+      font-size: 30px
+  .contact-page
+    padding-top: 26px
+    padding-bottom: 130px
+    h1.title
+      font-size: 30px
+    .section_title
+      margin-bottom: 40px
+    .contacts_list
+      gap: 70px
+      margin-bottom: 60px
+      flex-wrap: nowrap
+      .contact_item
+        width: 350px
+        .tag
+          margin-bottom: 13px
+          font-size: 16px
+        span
+          gap: 10px
+          a, p
+            font-size: 20px
+    .social
+      margin-bottom: 0
+      gap: 30px
+      .link
+        gap: 20px
+        font-size: 14.88px
+    .map
+      margin-top: 70px
+      height: 590px
+    .docs_wrapper
+      gap: 40px
+      .item
+        .name
+          font-size: 16px
+          margin-bottom: 10px
+        .content
+          font-size: 18px
+        .link
+          font-size: 16px
 
 
 +media-breakpoint-up(xl)

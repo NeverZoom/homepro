@@ -168,13 +168,17 @@ svg + .section_title
         svg
           path
             stroke: #CFCFCF
-    li.active
+    a.current, span.current
       border: 1px solid rgb(16, 16, 16)
-      a
+      &:hover
+        color: rgb(16, 16, 16)
+    li.active
+      a, span
+        border: 1px solid rgb(16, 16, 16)
         &:hover
           color: rgb(16, 16, 16)
     li
-      a
+      a, span
         display: flex
         justify-content: center
         align-items: center
@@ -197,3 +201,142 @@ svg + .section_title
 .stop
   position: relative
   z-index: 101
+
+
+.white-popup-block
+  margin: 0 auto
+.mfp-container
+  padding: 0
+  position: fixed !important
+
+.mfp-close
+  opacity: 1
+  height: auto
+  width: auto
+  padding: 0
+  &:hover
+    cursor: pointer
+
+.class_popup
+  width: 580px
+  background: rgb(255, 255, 255)
+  position: relative
+  padding: 30px 100px 30px 30px
+  .close
+    top: 20px
+    right: 20px
+    position: absolute
+    z-index: 9999
+  .title
+    margin-bottom: 20px
+    color: rgb(0, 0, 0)
+    font-size: 30px
+    font-weight: 700
+    line-height: 100%
+    text-transform: uppercase
+  .subtitle
+    margin-bottom: 60px
+    color: rgb(0, 0, 0)
+    font-size: 16px
+    font-weight: 400
+    line-height: 110%
+  form
+    input
+      margin-bottom: 30px
+      padding-bottom: 20px
+    textarea
+      resize: none
+      height: 75px
+    input, textarea
+      color: rgb(112, 112, 112)
+      font-size: 14px
+      font-weight: 400
+      line-height: 110%
+      border: none
+      background: none
+      width: 100%
+      border-bottom: 1.21px solid rgb(65, 65, 65)
+      &:placeholder
+        font-size: 14px
+        font-weight: 400
+        line-height: 110%
+    .button
+      margin-top: 40px
+      margin-bottom: 60px
+      width: 100%
+    >span
+      font-size: 12px
+      font-weight: 500
+      line-height: 120%
+      color: #A0A0A0
+      a
+        text-decoration: none
+        color: #414141
+
+
+input
+  border-radius: 0 
+  -webkit-appearance: none
+  border-top: none
+  border-left: none
+  border-right: none
+
+.preloader
+  position: fixed
+  left: 0
+  top: 0
+  z-index: 999999
+  height: 100vh
+  width: 100vw
+  background: #FBFBFB
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  gap: 30px
+  svg
+    width: 150px
+    height: auto
+    animation: preloader 2s forwards
+
+@keyframes preloader
+  0%
+    opacity: 0
+    transform: translateY(50px)
+  100%
+    transform: translateY(0px)
+    opacity: 1 
+
+.loaded_hiding .preloader
+  transition: 0.3s opacity
+  opacity: 0
+
+.loaded .preloader
+  display: none
+
+.loader-counter
+  color: #000000
+  font-size: 16px
+  line-height: 120%
+  display: block
+  animation: preloader 2s forwards
+
+
+.partners_card
+  text-decoration: none
+  img
+    margin-bottom: 20px
+    object-fit: cover
+    height: 340px
+    width: 100%
+  .name
+    margin-bottom: 10px
+    font-size: 18px
+    font-weight: 500
+    line-height: 120%
+    color: #393939
+  p
+    color: #777777
+    font-size: 14px
+    font-weight: 400
+    line-height: 110%

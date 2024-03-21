@@ -6,10 +6,63 @@ import 'magnific-popup/dist/jquery.magnific-popup.min.js';
 import Swiper from 'swiper/bundle';
 
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
+gsap.registerPlugin(ScrollTrigger);
 
+
+$(function(){$("[data-phone-pattern]").on("input blur focus",function(e){var c=e.target,h=$(c).data("phoneClear"),a=$(c).data("phonePattern");a=a?a:"+7(___) ___-__-__";var d=0,f=a.replace(/\D/g,""),b=$(c).val().replace(/\D/g,"");"false"!==h&&"blur"===e.type&&b.length<a.match(/([_\d])/g).length?$(c).val(""):(f.length>=b.length&&(b=f),$(c).val(a.replace(/./g,function(g){return/[_\d]/.test(g)&&d<b.length?b.charAt(d++):d>=b.length?"":g})))})});
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	var images = $('img'),
+	images_total_count = $('img').length,
+	images_loaded_count = 0,
+	perc_display = document.getElementById("loader-counter"),
+	preloader = document.getElementById("preloader");
+
+	if(preloader) {
+		let perVal = 0;
+		let increament = setInterval(() => {
+			perVal++;
+			perc_display.innerHTML = `${perVal}%`;
+	
+			for (var i = 0; i < images_total_count; i++) {
+				var image_clone = new Image();
+				image_clone.onload = images_loaded_count++;
+				image_clone.onerror = images_loaded_count++;
+				image_clone.src = images[i].src;
+			}
+	
+	
+			if (perVal == 100 && images_loaded_count >= images_total_count) {
+				clearInterval(increament);
+				$('body').addClass('loaded_hiding');
+					window.setTimeout(function () {
+						$('body').addClass('loaded');
+						// $('body').addClass('loaded_hiding');
+					}, 300);
+			}
+		}, 20);
+	}
+
+	if($('.slideImg').length != 0) {
+
+		let tl = gsap.timeline({
+			// yes, we can add it to an entire timeline!
+			scrollTrigger: {
+				trigger: ".slideImg",
+				pin: true,   // pin the trigger element while active
+				start: "center center", // when the top of the trigger hits the top of the viewport
+				end: "+="+innerHeight, // end after scrolling 500px beyond the start
+				scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+				// markers: true,
+			}
+		});
+		// add animations and labels to the timeline
+		tl.addLabel("start")
+			.fromTo('.slideImg__top', {clip:"rect(0 100vw 100vh 0)"}, {clip:"rect(0 100vw 0px 0)"});
+	}
+
 
 	if (document.documentElement.clientWidth < 834 ) {
 		if ($('.news_slider').length) {
@@ -22,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				breakpoints: {
 					// when window width is >= 320px
 					320: {
-						slidesPerView: 1.03,
+						slidesPerView: 1.2,
 						spaceBetween: 10,
 					},
 					// when window width is >= 640px
@@ -98,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 		$('.calc .counter').empty();
-		console.log(nav);
+		// console.log(nav);
 		if (nav != 8 && nav != 1) {
 			$('.calc .counter').text(nav-1+' / 6');
 		} else if (nav == 8) {
@@ -220,6 +273,13 @@ document.addEventListener('DOMContentLoaded', () => {
 				prevEl: ".swiper-button-prev",
 			},
 		});
+
+		const lightbox = new PhotoSwipeLightbox({
+			gallery: '#my-gallery-pl1',
+			children: '.swiper-slide',
+			pswpModule: () => import('photoswipe')
+		});
+		lightbox.init();
 	}
 
 	if ($('.facade_slider').length) {
@@ -233,6 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
 				prevEl: ".swiper-button-prev",
 			},
 		});
+
+		const lightbox = new PhotoSwipeLightbox({
+			gallery: '#my-gallery-pl2',
+			children: '.swiper-slide',
+			pswpModule: () => import('photoswipe')
+		});
+		lightbox.init();
 	}
 
 	$('.single_ready_content .tabs .tab').on('click', function() {
@@ -285,6 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	$('.accordeon .item .name').on('click', function() {
+		$(this).parent().toggleClass('active');
 		$(this).siblings('.content').slideToggle();
 	});
 
@@ -538,8 +606,121 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	$('.top-line .main_line nav .sub').on('click', function() {
+		$(this).siblings().removeClass('active');
+		$(this).toggleClass('active');
+	});
+
+	$('.popup1').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		showCloseBtn: false,
+		focus: '#name',
+		mainClass: 'mfp-with-zoom',
+		zoom: {
+			enabled: true,
+			duration: 300,
+			easing: 'ease-in-out',
+			opener: function(openerElement) {
+				return openerElement.is('img') ? openerElement : openerElement.find('img');
+			}
+		},
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
+			}
+		}
+	});
+
+	$('.popup2').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		showCloseBtn: false,
+		focus: '#name',
+		mainClass: 'mfp-with-zoom',
+		zoom: {
+			enabled: true,
+			duration: 300,
+			easing: 'ease-in-out',
+			opener: function(openerElement) {
+				return openerElement.is('img') ? openerElement : openerElement.find('img');
+			}
+		},
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
+			}
+		}
+	});
+
+	$('.popup3').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		showCloseBtn: false,
+		focus: '#name',
+		mainClass: 'mfp-with-zoom',
+		zoom: {
+			enabled: true,
+			duration: 300,
+			easing: 'ease-in-out',
+			opener: function(openerElement) {
+				return openerElement.is('img') ? openerElement : openerElement.find('img');
+			}
+		},
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
+			}
+		}
+	});
+
+	$('.burger').on('click', function() {
+		$('.mobile-menu').addClass('active');
+	});
+
+	$('.mobile-menu .close').on('click', function() {
+		$('.mobile-menu').removeClass('active');
+	});
+
+	$('.mobile-menu ul .sub').on('click', function() {
+		$(this).siblings().removeClass('active');
+		$(this).siblings().children('.sub-menu').slideUp();
+		$(this).toggleClass('active');
+		$(this).children('.sub-menu').slideToggle();
+	});
+
+	$('.ipo_calc form button').on('click', function() {
+		event.preventDefault();
+
+		var price = $(this).parent().parent().find('input.price').val();
+		var first = $(this).parent().parent().find('input.first').val();
+		var time = $(this).parent().parent().find('input.time').val();
+
+		$.magnificPopup.open({
+      items: {
+          src: '#popup3' 
+      },
+      type: 'inline'
+    });
+
+		$('#popup3 input#ipoprice').val(price);
+		$('#popup3 input#ipofirst').val(first);
+		$('#popup3 input#ipotime').val(time);
 
 
+	});
 
 
 })

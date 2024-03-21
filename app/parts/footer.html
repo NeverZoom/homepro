@@ -1,5 +1,89 @@
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>	
+	<script src="js/gsap.min.js"></script>
+	<script src="js/ScrollTrigger.min.js"></script>
 	<script src="js/app.min.js"></script>
+
+
+	<script>
+		$("form.send_form").submit(function() { //Change
+			var th = $(this);
+			$.ajax({
+				type: "POST",
+				url: "/mail.php", //Change
+				data: th.serialize()
+			}).done(function() {
+				$(th).find('.success').addClass('active').css('display', 'flex').hide().fadeIn();
+				$(th).find('input').fadeOut();
+				$(th).find('.button').fadeOut();
+				setTimeout(function() {
+					$(th).find('.success').removeClass('active').fadeOut();
+					$(th).find('input').hide().fadeIn();
+					$(th).find('.button').hide().fadeIn();
+					th.trigger("reset");
+				}, 5000);
+			});
+			return false;
+		});
+
+		$("form.contact_form").submit(function() { //Change
+			var th = $(this);
+			$.ajax({
+				type: "POST",
+				url: "/mail.php", //Change
+				data: th.serialize()
+			}).done(function() {
+				$(th).find('.success').addClass('active').css('display', 'flex').hide().fadeIn();
+				$(th).find('input').fadeOut();
+				$(th).find('textarea').fadeOut();
+				$(th).find('.button').fadeOut();
+				setTimeout(function() {
+					$(th).find('.success').removeClass('active').fadeOut();
+					$(th).find('input').hide().fadeIn();
+					$(th).find('textarea').hide().fadeIn();
+					$(th).find('.button').hide().fadeIn();
+					th.trigger("reset");
+				}, 5000);
+			});
+			return false;
+		});
+
+		$("form.calc_form").submit(function() { //Change
+			var th = $(this);
+			$.ajax({
+				type: "POST",
+				url: "/mail.php", //Change
+				data: th.serialize()
+			}).done(function() {
+				var th = $('form.calc_form');
+				$('.calc .counter').empty();
+				$('.calc .counter').text('В ближайшее время наш менеджер с вами свяжется для уточнения деталей.');
+				$('.calc .title').empty();
+				$('.calc .title').text('Информация отправлена');			
+				$(th).find('.send_form input').fadeOut();
+				$(th).find('.send_form button').fadeOut();
+			});
+			return false;
+		});
+
+		$("form.pop_form").submit(function() { //Change
+			var th = $(this);
+			$.ajax({
+				type: "POST",
+				url: "/mail.php", //Change
+				data: th.serialize()
+			}).done(function() {
+				$('.calc .title').empty();
+				$('.calc .title').text('Ваши данные отправлены успешно!');
+				$('.calc .subtitle').empty();
+				$('.calc .subtitle').text('В ближайшее время наш менеджер свяжется с вами.');			
+				$(th).find('input').fadeOut();
+				$(th).find('button').fadeOut();
+
+			});
+			return false;
+		});
+
+	</script>
 
 </body>
 </html>
