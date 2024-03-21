@@ -45,7 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		}, 20);
 	}
 
-	ScrollTrigger.config({ ignoreMobileResize: true });
+
+	ScrollTrigger.normalizeScroll(true); // enable
+ 	ScrollTrigger.config({
+ 	   limitCallbacks: true,
+ 	   ignoreMobileResize: true,
+ 	});
 	if($('.slideImg').length != 0) {
 
 		let tl = gsap.timeline({
