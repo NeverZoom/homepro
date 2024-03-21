@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 
-	ScrollTrigger.normalizeScroll(true); // enable
+	// ScrollTrigger.normalizeScroll(true); // enable
  	ScrollTrigger.config({
  	   limitCallbacks: true,
  	   ignoreMobileResize: true,
