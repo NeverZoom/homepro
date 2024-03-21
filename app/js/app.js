@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}, 20);
 	}
 
+	ScrollTrigger.config({ ignoreMobileResize: true });
 	if($('.slideImg').length != 0) {
 
 		let tl = gsap.timeline({
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				start: "center center", // when the top of the trigger hits the top of the viewport
 				end: "+="+innerHeight, // end after scrolling 500px beyond the start
 				scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-				// markers: true,
+				markers: true,
 			}
 		});
 		// add animations and labels to the timeline
