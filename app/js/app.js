@@ -51,6 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
  	   limitCallbacks: true,
  	   ignoreMobileResize: true,
  	});
+
+	 window.jumpTo = window.scrollTo;
+	 window.scrollTo = () => {
+			 console.warn('"window.scrollTo" function has been temporarily disabled.');
+	 };
+
 	if($('.slideImg').length != 0) {
 
 		let tl = gsap.timeline({
