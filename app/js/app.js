@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	 window.jumpTo = window.scrollTo;
 	 window.scrollTo = () => {
-			 console.warn('"window.scrollTo" function has been temporarily disabled.');
+			//  console.warn('"window.scrollTo" function has been temporarily disabled.');
 	 };
 
 	if($('.slideImg').length != 0) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				trigger: ".slideImg",
 				pin: true,   // pin the trigger element while active
 				start: "center center", // when the top of the trigger hits the top of the viewport
-				end: "+=500", // end after scrolling 500px beyond the start
+				end: "+="+innerHeight, // end after scrolling 500px beyond the start
 				scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
 				markers: true,
 			}
