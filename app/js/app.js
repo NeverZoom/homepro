@@ -51,6 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
  	   limitCallbacks: true,
  	   ignoreMobileResize: true,
  	});
+	
+	ScrollTrigger.normalizeScroll({ allowNestedScroll: true});
 
 	 window.jumpTo = window.scrollTo;
 	 window.scrollTo = () => {
